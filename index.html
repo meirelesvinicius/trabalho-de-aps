@@ -1,366 +1,357 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stage Gaúcha Automotiva</title>
 
-```
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stage Gaúcha Automotiva</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family:'Montserrat', sans-serif;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat', sans-serif;
+}
 
-    body{
-        background:#111;
-        color:white;
-    }
+body{
+    background:#111;
+    color:white;
+}
 
-    /* HEADER */
+/* HEADER */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 60px;
+    background:rgba(0,0,0,0.6);
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#7B3FFF;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1470&auto=format&fit=crop')
+    center/cover no-repeat;
+
+    display:flex;
+    align-items:center;
+    padding:0 70px;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:64px;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:20px;
+    color:#ddd;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+.buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 35px;
+    background:#6A00FF;
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#4b00b5;
+}
+
+/* BOTÃO 3D */
+
+.btn-3d{
+    display:inline-block;
+    padding:16px 35px;
+    background:#111;
+    border:2px solid #6A00FF;
+    color:white;
+    font-weight:700;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-3d:hover{
+    background:#6A00FF;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 70px;
+}
+
+section h2{
+    font-size:42px;
+    margin-bottom:25px;
+}
+
+section p{
+    color:#ccc;
+    line-height:1.8;
+    font-size:18px;
+}
+
+/* SERVIÇOS */
+
+.servicos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.servico-card{
+    background:#1a1a1a;
+    padding:35px;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+    text-align:center;
+    font-size:20px;
+    font-weight:700;
+    transition:0.3s;
+    border:2px solid transparent;
+}
+
+.servico-card:hover{
+    transform:translateY(-5px);
+    border-color:#6A00FF;
+    background:#222;
+}
+
+/* FOOTER */
+
+footer{
+    background:black;
+    text-align:center;
+    padding:35px;
+    color:#aaa;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:#25d366;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:30px;
+    text-decoration:none;
+}
+
+/* MODAL 3D */
+
+.modal3d{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.modal-content{
+    background:#1a1a1a;
+    width:90%;
+    max-width:700px;
+    padding:40px;
+    border-radius:12px;
+}
+
+.fechar{
+    float:right;
+    font-size:32px;
+    cursor:pointer;
+}
+
+.marcas{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:20px;
+}
+
+.marcas button{
+    padding:15px 25px;
+    border:none;
+    background:#6A00FF;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+#pesquisaCarro{
+    width:100%;
+    padding:15px;
+    margin-top:30px;
+    background:#111;
+    border:none;
+    color:white;
+    border-radius:6px;
+}
+
+.lista-carros{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.carro-item{
+    padding:15px;
+    background:#222;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.carro-item:hover{
+    background:#6A00FF;
+}
+
+/* VIEWER 3D */
+
+.viewer3d{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    display:none;
+    z-index:10000;
+}
+
+.viewer3d iframe{
+    width:100%;
+    height:100%;
+}
+
+.fechar-viewer{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:40px;
+    cursor:pointer;
+    z-index:10001;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
 
     header{
-        position:fixed;
-        width:100%;
-        top:0;
-        left:0;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:25px 60px;
-        background:rgba(0,0,0,0.6);
-        z-index:1000;
+        padding:20px;
+        flex-direction:column;
     }
 
-    .logo{
-        font-size:28px;
-        font-weight:700;
-        color:white;
+    nav{
+        margin-top:15px;
     }
 
     nav a{
-        color:white;
-        text-decoration:none;
-        margin-left:30px;
-        font-weight:500;
-        transition:0.3s;
+        margin:0 10px;
+        font-size:14px;
     }
-
-    nav a:hover{
-        color:#7B3FFF;
-    }
-
-    /* HERO */
 
     .hero{
-        height:100vh;
-        background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-        url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1470&auto=format&fit=crop')
-        center/cover no-repeat;
-
-        display:flex;
-        align-items:center;
-        padding:0 70px;
-    }
-
-    .hero-content{
-        max-width:700px;
+        padding:0 25px;
     }
 
     .hero h1{
-        font-size:64px;
-        font-weight:700;
-        line-height:1.1;
-        margin-bottom:25px;
+        font-size:42px;
     }
-
-    .hero p{
-        font-size:20px;
-        color:#ddd;
-        line-height:1.7;
-        margin-bottom:35px;
-    }
-
-    .buttons{
-        display:flex;
-        gap:20px;
-        flex-wrap:wrap;
-    }
-
-    .btn{
-        display:inline-block;
-        padding:16px 35px;
-        background:#6A00FF;
-        color:white;
-        text-decoration:none;
-        font-weight:700;
-        border-radius:6px;
-        transition:0.3s;
-    }
-
-    .btn:hover{
-        background:#4b00b5;
-    }
-
-    /* BOTÃO 3D */
-
-    .btn-3d{
-        display:inline-block;
-        padding:16px 35px;
-        background:#111;
-        border:2px solid #6A00FF;
-        color:white;
-        font-weight:700;
-        border-radius:6px;
-        cursor:pointer;
-        transition:0.3s;
-    }
-
-    .btn-3d:hover{
-        background:#6A00FF;
-    }
-
-    /* SECTIONS */
 
     section{
-        padding:100px 70px;
+        padding:70px 25px;
     }
 
-    section h2{
-        font-size:42px;
-        margin-bottom:25px;
-    }
-
-    section p{
-        color:#ccc;
-        line-height:1.8;
-        font-size:18px;
-        max-width:800px;
-    }
-
-    /* SERVIÇOS */
-
-    .servicos-grid{
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-        gap:25px;
-        margin-top:40px;
-    }
-
-    .servico-card{
-        background:#1a1a1a;
-        padding:35px;
-        border-radius:10px;
-        text-decoration:none;
-        color:white;
-        font-size:20px;
-        font-weight:700;
-        text-align:center;
-        transition:0.3s;
-        border:2px solid transparent;
-    }
-
-    .servico-card:hover{
-        transform:translateY(-5px);
-        border-color:#6A00FF;
-        background:#222;
-    }
-
-    /* FOOTER */
-
-    footer{
-        background:black;
-        text-align:center;
-        padding:35px;
-        color:#aaa;
-    }
-
-    /* WHATSAPP */
-
-    .whatsapp{
-        position:fixed;
-        right:25px;
-        bottom:25px;
-        background:#25d366;
-        width:65px;
-        height:65px;
-        border-radius:50%;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        color:white;
-        font-size:30px;
-        text-decoration:none;
-        box-shadow:0 0 15px rgba(0,0,0,0.4);
-    }
-
-    /* MODAL 3D */
-
-    .modal3d{
-        position:fixed;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        background:rgba(0,0,0,0.9);
-        display:none;
-        justify-content:center;
-        align-items:center;
-        z-index:9999;
-    }
-
-    .modal-content{
-        background:#1a1a1a;
-        width:90%;
-        max-width:700px;
-        padding:40px;
-        border-radius:12px;
-    }
-
-    .modal-content h2{
-        margin-bottom:30px;
-    }
-
-    .fechar{
-        float:right;
-        font-size:32px;
-        cursor:pointer;
-    }
-
-    .marcas{
-        display:flex;
-        flex-wrap:wrap;
-        gap:15px;
-    }
-
-    .marcas button{
-        padding:15px 25px;
-        border:none;
-        background:#6A00FF;
-        color:white;
-        border-radius:6px;
-        cursor:pointer;
-        font-weight:700;
-    }
-
-    #pesquisaCarro{
-        width:100%;
-        padding:15px;
-        margin-top:30px;
-        background:#111;
-        border:none;
-        color:white;
-        border-radius:6px;
-    }
-
-    .lista-carros{
-        margin-top:20px;
-        display:flex;
-        flex-direction:column;
-        gap:10px;
-    }
-
-    .carro-item{
-        padding:15px;
-        background:#222;
-        border-radius:6px;
-        cursor:pointer;
-        transition:0.3s;
-    }
-
-    .carro-item:hover{
-        background:#6A00FF;
-    }
-
-    /* VIEWER 3D */
-
-    .viewer3d{
-        position:fixed;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        background:black;
-        display:none;
-        z-index:10000;
-    }
-
-    .viewer3d iframe{
-        width:100%;
-        height:100%;
-    }
-
-    .fechar-viewer{
-        position:absolute;
-        top:20px;
-        right:30px;
-        color:white;
-        font-size:40px;
-        cursor:pointer;
-        z-index:10001;
-    }
-
-    /* RESPONSIVO */
-
-    @media(max-width:768px){
-
-        header{
-            padding:20px;
-            flex-direction:column;
-        }
-
-        nav{
-            margin-top:15px;
-        }
-
-        nav a{
-            margin:0 10px;
-            font-size:14px;
-        }
-
-        .hero{
-            padding:0 25px;
-        }
-
-        .hero h1{
-            font-size:42px;
-        }
-
-        section{
-            padding:70px 25px;
-        }
-
-    }
+}
 
 </style>
-```
 
 </head>
 
 <body>
 
-```
-<!-- HEADER -->
-
 <header>
 
-    <div class="logo">
-        Stage Gaúcha Automotiva
-    </div>
+```
+<div class="logo">
+    Stage Gaúcha Automotiva
+</div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#empresa">A Empresa</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contato">Contato</a>
-    </nav>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#empresa">Empresa</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+</nav>
+```
 
 </header>
 
@@ -368,31 +359,31 @@
 
 <section class="hero" id="home">
 
-    <div class="hero-content">
+```
+<div class="hero-content">
 
-        <h1>
-            NÓS FORNECEMOS MAIS DE 300 TIPOS DE SERVIÇOS
-        </h1>
+    <h1>
+        NÓS FORNECEMOS MAIS DE 300 TIPOS DE SERVIÇOS
+    </h1>
 
-        <p>
-            Atuamos com uma ampla variedade de serviços automotivos,
-            oferecendo qualidade, confiança e tecnologia para cuidar
-            do seu veículo com excelência.
-        </p>
+    <p>
+        Atuamos com uma ampla variedade de serviços automotivos.
+    </p>
 
-        <div class="buttons">
+    <div class="buttons">
 
-            <a href="https://wa.me/5544997087954" class="btn">
-                (44) 99708-7954
-            </a>
+        <a href="https://wa.me/5544997087954" class="btn">
+            WhatsApp
+        </a>
 
-            <a class="btn-3d" onclick="abrirModal()">
-                Simulação 3D
-            </a>
-
-        </div>
+        <a class="btn-3d" onclick="abrirModal()">
+            Simulação 3D
+        </a>
 
     </div>
+
+</div>
+```
 
 </section>
 
@@ -400,13 +391,13 @@
 
 <section id="empresa">
 
-    <h2>A Empresa</h2>
+```
+<h2>A Empresa</h2>
 
-    <p>
-        A Stage Gaúcha Automotiva é especializada em manutenção
-        automotiva completa, oferecendo serviços de alta qualidade
-        com profissionais capacitados e equipamentos modernos.
-    </p>
+<p>
+    Especializada em manutenção automotiva premium.
+</p>
+```
 
 </section>
 
@@ -414,35 +405,18 @@
 
 <section id="servicos">
 
-    <h2>Escolha um Serviço</h2>
+```
+<h2>Serviços</h2>
 
-    <div class="servicos-grid">
+<div class="servicos-grid">
 
-        <a class="servico-card" href="#">
-            Troca de Óleo
-        </a>
+    <a class="servico-card">Troca de Óleo</a>
+    <a class="servico-card">Freios</a>
+    <a class="servico-card">Suspensão</a>
+    <a class="servico-card">Revisão</a>
 
-        <a class="servico-card" href="#">
-            Alinhamento e Balanceamento
-        </a>
-
-        <a class="servico-card" href="#">
-            Freios
-        </a>
-
-        <a class="servico-card" href="#">
-            Suspensão
-        </a>
-
-        <a class="servico-card" href="#">
-            Injeção Eletrônica
-        </a>
-
-        <a class="servico-card" href="#">
-            Revisão Completa
-        </a>
-
-    </div>
+</div>
+```
 
 </section>
 
@@ -450,72 +424,73 @@
 
 <section id="contato">
 
-    <h2>Contato</h2>
+```
+<h2>Contato</h2>
 
-    <p><strong>Telefone:</strong> (44) 99708-7954</p>
-
-    <p><strong>Email:</strong> mecanicaautomotiva.gaucha@gmail.com</p>
+<p>(44) 99708-7954</p>
+```
 
 </section>
 
-<!-- FOOTER -->
-
 <footer>
-    © 2026 Stage Gaúcha Automotiva
+
+```
+© 2026 Stage Gaúcha Automotiva
+```
+
 </footer>
 
-<!-- WHATSAPP -->
-
 <a class="whatsapp" href="https://wa.me/5544997087954">
-    ☎
+☎
 </a>
 
-<!-- MODAL 3D -->
+<!-- MODAL -->
 
 <div class="modal3d" id="modal3d">
 
-    <div class="modal-content">
+```
+<div class="modal-content">
 
-        <span class="fechar" onclick="fecharModal()">
-            ×
-        </span>
+    <span class="fechar" onclick="fecharModal()">
+        ×
+    </span>
 
-        <h2>Escolha a Marca</h2>
+    <h2>Escolha a Marca</h2>
 
-        <div class="marcas">
+    <div class="marcas">
 
-            <button onclick="selecionarMarca('BMW')">
-                BMW
-            </button>
+        <button onclick="selecionarMarca('BMW')">
+            BMW
+        </button>
 
-            <button onclick="selecionarMarca('Audi')">
-                Audi
-            </button>
+        <button onclick="selecionarMarca('Audi')">
+            Audi
+        </button>
 
-            <button onclick="selecionarMarca('Mercedes')">
-                Mercedes
-            </button>
+        <button onclick="selecionarMarca('Mercedes')">
+            Mercedes
+        </button>
 
-            <button onclick="selecionarMarca('Toyota')">
-                Toyota
-            </button>
-
-        </div>
-
-        <div id="areaPesquisa" style="display:none;">
-
-            <input
-                type="text"
-                id="pesquisaCarro"
-                placeholder="Digite o modelo..."
-                onkeyup="filtrarCarros()"
-            >
-
-            <div class="lista-carros" id="listaCarros"></div>
-
-        </div>
+        <button onclick="selecionarMarca('Toyota')">
+            Toyota
+        </button>
 
     </div>
+
+    <div id="areaPesquisa" style="display:none;">
+
+        <input
+        type="text"
+        id="pesquisaCarro"
+        placeholder="Digite o modelo..."
+        onkeyup="filtrarCarros()">
+
+        <div class="lista-carros" id="listaCarros"></div>
+
+    </div>
+
+</div>
+```
 
 </div>
 
@@ -523,138 +498,149 @@
 
 <div class="viewer3d" id="viewer3d">
 
-    <span class="fechar-viewer" onclick="fecharViewer()">
-        ×
-    </span>
+```
+<span
+class="fechar-viewer"
+onclick="fecharViewer()">
 
-    <iframe
-        id="iframe3d"
-        src=""
-        frameborder="0"
-        allowfullscreen>
-    </iframe>
+×
+
+</span>
+
+<iframe
+id="iframe3d"
+src=""
+frameborder="0"
+allowfullscreen>
+
+</iframe>
+```
 
 </div>
 
 <script>
 
-    const carros = {
+const carros = {
 
-        BMW: [
-            {
-                nome: "BMW M3",
-                link: "https://sketchfab.com/models/8d7f0f1a5e5f4e48a8f5d3d0d6d0e3e5/embed"
-            }
-        ],
+    BMW: [
+        {
+            nome: "BMW M4",
+            link: "https://www.youtube.com/embed/rnRbHJ1BQXA"
+        }
+    ],
 
-        Audi: [
-            {
-                nome: "Audi RS6",
-                link: "https://sketchfab.com/models/6d8e4a2e3f2f4e9cb6f4d5d9f0d7d7d1/embed"
-            }
-        ],
+    Audi: [
+        {
+            nome: "Audi R8",
+            link: "https://www.youtube.com/embed/Vi-e7J8L5xY"
+        }
+    ],
 
-        Mercedes: [
-            {
-                nome: "Mercedes AMG GT",
-                link: "https://sketchfab.com/models/5f3b2e1c4d5e6f7a8b9c0d1e2f3a4b5c/embed"
-            }
-        ],
+    Mercedes: [
+        {
+            nome: "Mercedes AMG",
+            link: "https://www.youtube.com/embed/q6fQ4z1xsuQ"
+        }
+    ],
 
-        Toyota: [
-            {
-                nome: "Supra MK4",
-                link: "https://sketchfab.com/models/7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e/embed"
-            }
-        ]
+    Toyota: [
+        {
+            nome: "Toyota Supra",
+            link: "https://www.youtube.com/embed/D9H0D8e4h2A"
+        }
+    ]
 
-    };
+};
 
-    let marcaSelecionada = [];
+let marcaSelecionada = [];
 
-    function abrirModal(){
+function abrirModal(){
 
-        document.getElementById("modal3d").style.display = "flex";
+    document.getElementById("modal3d")
+    .style.display = "flex";
 
-    }
+}
 
-    function fecharModal(){
+function fecharModal(){
 
-        document.getElementById("modal3d").style.display = "none";
+    document.getElementById("modal3d")
+    .style.display = "none";
 
-    }
+}
 
-    function selecionarMarca(marca){
+function selecionarMarca(marca){
 
-        marcaSelecionada = carros[marca];
+    marcaSelecionada = carros[marca];
 
-        document.getElementById("areaPesquisa").style.display = "block";
+    document.getElementById("areaPesquisa")
+    .style.display = "block";
 
-        mostrarCarros(marcaSelecionada);
+    mostrarCarros(marcaSelecionada);
 
-    }
+}
 
-    function mostrarCarros(lista){
+function mostrarCarros(lista){
 
-        const container =
-        document.getElementById("listaCarros");
+    const container =
+    document.getElementById("listaCarros");
 
-        container.innerHTML = "";
+    container.innerHTML = "";
 
-        lista.forEach(carro => {
+    lista.forEach(carro => {
 
-            container.innerHTML += `
-                <div class="carro-item"
-                onclick="abrir3D('${carro.link}')">
+        container.innerHTML += `
 
-                    ${carro.nome}
+        <div
+        class="carro-item"
+        onclick="abrir3D('${carro.link}')">
 
-                </div>
-            `;
+        ${carro.nome}
 
-        });
+        </div>
 
-    }
+        `;
 
-    function filtrarCarros(){
+    });
 
-        const texto =
-        document.getElementById("pesquisaCarro")
-        .value
-        .toLowerCase();
+}
 
-        const filtrados =
-        marcaSelecionada.filter(carro =>
-            carro.nome.toLowerCase().includes(texto)
-        );
+function filtrarCarros(){
 
-        mostrarCarros(filtrados);
+    const texto =
+    document.getElementById("pesquisaCarro")
+    .value
+    .toLowerCase();
 
-    }
+    const filtrados =
+    marcaSelecionada.filter(carro =>
+    carro.nome.toLowerCase().includes(texto)
+    );
 
-    function abrir3D(link){
+    mostrarCarros(filtrados);
 
-        document.getElementById("viewer3d")
-        .style.display = "block";
+}
 
-        document.getElementById("iframe3d")
-        .src = link;
+function abrir3D(link){
 
-    }
+    document.getElementById("viewer3d")
+    .style.display = "block";
 
-    function fecharViewer(){
+    document.getElementById("iframe3d")
+    .src = link;
 
-        document.getElementById("viewer3d")
-        .style.display = "none";
+}
 
-        document.getElementById("iframe3d")
-        .src = "";
+function fecharViewer(){
 
-    }
+    document.getElementById("viewer3d")
+    .style.display = "none";
+
+    document.getElementById("iframe3d")
+    .src = "";
+
+}
 
 </script>
-```
 
 </body>
 </html>
-
