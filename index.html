@@ -1,1 +1,157 @@
-!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Stage Gaúcha Automotiva</title> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> <style> *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat', sans-serif;} body{background:#111;color:white;} /* HEADER */ header{ position:fixed; width:100%; top:0; left:0; display:flex; justify-content:space-between; align-items:center; padding:25px 60px; background:rgba(0,0,0,0.6); z-index:1000; } .logo{font-size:28px; font-weight:700; color:white;} nav a{color:white;text-decoration:none;margin-left:30px;font-weight:500;transition:0.3s;} nav a:hover{color:#7B3FFF;} /* HERO */ .hero{ height:100vh; background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1470&auto=format&fit=crop') center/cover no-repeat; display:flex; align-items:center; padding:0 70px; } .hero-content{max-width:700px;} .hero h1{font-size:64px;font-weight:700;line-height:1.1;margin-bottom:25px;} .hero p{font-size:20px;color:#ddd;line-height:1.7;margin-bottom:35px;} .btn{display:inline-block;padding:16px 35px;background:#6A00FF;color:white;text-decoration:none;font-weight:700;border-radius:6px;transition:0.3s;} .btn:hover{background:#4b00b5;} /* SECTIONS */ section{padding:100px 70px;} section h2{font-size:42px;margin-bottom:25px;} section p{color:#ccc;line-height:1.8;font-size:18px;max-width:800px;} /* SERVIÇOS GRID */ .servicos-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; margin-top:40px; } .servico-card{ background:#1a1a1a; padding:35px; border-radius:10px; text-decoration:none; color:white; font-size:20px; font-weight:700; text-align:center; transition:0.3s; border:2px solid transparent; } .servico-card:hover{ transform:translateY(-5px); border-color:#6A00FF; background:#222; } /* FOOTER */ footer{background:black;text-align:center;padding:35px;color:#aaa;} /* WHATSAPP */ .whatsapp{ position:fixed; right:25px; bottom:25px; background:#25d366; width:65px; height:65px; border-radius:50%; display:flex; justify-content:center; align-items:center; color:white; font-size:30px; text-decoration:none; box-shadow:0 0 15px rgba(0,0,0,0.4); } /* RESPONSIVO */ @media(max-width:768px){ header{padding:20px; flex-direction:column;} nav{margin-top:15px;} nav a{margin:0 10px; font-size:14px;} .hero{padding:0 25px;} .hero h1{font-size:42px;} section{padding:70px 25px;} } </style> </head> <body> <!-- HEADER --> <header> <div class="logo">Stage Gaúcha Automotiva</div> <nav> <a href="#home">Home</a> <a href="#empresa">A Empresa</a> <a href="#servicos">Serviços</a> <a href="#contato">Contato</a> </nav> </header> <!-- HERO --> <section class="hero" id="home"> <div class="hero-content"> <h1>NÓS FORNECEMOS MAIS DE 300 TIPOS DE SERVIÇOS</h1> <p>Atuamos com uma ampla variedade de serviços automotivos, oferecendo qualidade, confiança e tecnologia para cuidar do seu veículo com excelência.</p> <a href="https://wa.me/5544997087954" class="btn">(44) 99708-7954</a> </div> </section> <!-- EMPRESA --> <section id="empresa"> <h2>A Empresa</h2> <p>A Stage Gaúcha Automotiva é especializada em manutenção automotiva completa, oferecendo serviços de alta qualidade com profissionais capacitados e equipamentos modernos.</p> </section> <!-- SERVIÇOS --> <section id="servicos"> <h2>Escolha um Serviço</h2> <div class="servicos-grid"> <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Troca%20de%20Óleo.">Troca de Óleo</a> <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Alinhamento%20e%20Balanceamento.">Alinhamento e Balanceamento</a> <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Freios.">Freios</a> <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Suspensão.">Suspensão</a> <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Injeção%20Eletrônica.">Injeção Eletrônica</a> <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Revisão%20Completa.">Revisão Completa</a> </div> </section> <!-- CONTATO --> <section id="contato"> <h2>Contato</h2> <p><strong>Telefone:</strong> (44) 99708-7954</p> <p><strong>Email:</strong> mecanicaautomotiva.gaucha@gmail.com</p> </section> <!-- FOOTER --> <footer>© 2026 Stage Gaúcha Automotiva - Todos os direitos reservados.</footer> <!-- WHATSAPP FIXO --> <a class="whatsapp" href="https://wa.me/5544997087954">☎</a> </body> </html>
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage Gaúcha Automotiva</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat', sans-serif;}
+        body{background:#111;color:white;}
+
+```
+    /* HEADER */
+    header{
+        position:fixed; width:100%; top:0; left:0;
+        display:flex; justify-content:space-between; align-items:center;
+        padding:25px 60px; background:rgba(0,0,0,0.6); z-index:1000;
+    }
+    .logo{font-size:28px; font-weight:700; color:white;}
+    nav a{color:white;text-decoration:none;margin-left:30px;font-weight:500;transition:0.3s;}
+    nav a:hover{color:#7B3FFF;}
+
+    /* HERO */
+    .hero{
+        height:100vh;
+        background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1470&auto=format&fit=crop') center/cover no-repeat;
+        display:flex; align-items:center; padding:0 70px;
+    }
+    .hero-content{max-width:700px;}
+    .hero h1{font-size:64px;font-weight:700;line-height:1.1;margin-bottom:25px;}
+    .hero p{font-size:20px;color:#ddd;line-height:1.7;margin-bottom:35px;}
+    .btn{display:inline-block;padding:16px 35px;background:#6A00FF;color:white;text-decoration:none;font-weight:700;border-radius:6px;transition:0.3s;}
+    .btn:hover{background:#4b00b5;}
+
+    /* SECTIONS */
+    section{padding:100px 70px;}
+    section h2{font-size:42px;margin-bottom:25px;}
+    section p{color:#ccc;line-height:1.8;font-size:18px;max-width:800px;}
+
+    /* SERVIÇOS GRID */
+    .servicos-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        gap:25px;
+        margin-top:40px;
+    }
+    .servico-card{
+        background:#1a1a1a;
+        padding:35px;
+        border-radius:10px;
+        text-decoration:none;
+        color:white;
+        font-size:20px;
+        font-weight:700;
+        text-align:center;
+        transition:0.3s;
+        border:2px solid transparent;
+    }
+    .servico-card:hover{
+        transform:translateY(-5px);
+        border-color:#6A00FF;
+        background:#222;
+    }
+
+    /* FOOTER */
+    footer{background:black;text-align:center;padding:35px;color:#aaa;}
+
+    /* WHATSAPP */
+    .whatsapp{
+        position:fixed;
+        right:25px;
+        bottom:25px;
+        background:#25d366;
+        width:65px;
+        height:65px;
+        border-radius:50%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        color:white;
+        font-size:30px;
+        text-decoration:none;
+        box-shadow:0 0 15px rgba(0,0,0,0.4);
+    }
+
+    /* RESPONSIVO */
+    @media(max-width:768px){
+        header{padding:20px; flex-direction:column;}
+        nav{margin-top:15px;}
+        nav a{margin:0 10px; font-size:14px;}
+        .hero{padding:0 25px;}
+        .hero h1{font-size:42px;}
+        section{padding:70px 25px;}
+    }
+</style>
+```
+
+</head>
+<body>
+
+```
+<!-- HEADER -->
+<header>
+    <div class="logo">Stage Gaúcha Automotiva</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#empresa">A Empresa</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>NÓS FORNECEMOS MAIS DE 300 TIPOS DE SERVIÇOS</h1>
+        <p>Atuamos com uma ampla variedade de serviços automotivos, oferecendo qualidade, confiança e tecnologia para cuidar do seu veículo com excelência.</p>
+        <a href="https://wa.me/5544997087954" class="btn">(44) 99708-7954</a>
+    </div>
+</section>
+
+<!-- EMPRESA -->
+<section id="empresa">
+    <h2>A Empresa</h2>
+    <p>A Stage Gaúcha Automotiva é especializada em manutenção automotiva completa, oferecendo serviços de alta qualidade com profissionais capacitados e equipamentos modernos.</p>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+    <h2>Escolha um Serviço</h2>
+    <div class="servicos-grid">
+        <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Troca%20de%20Óleo.">Troca de Óleo</a>
+        <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Alinhamento%20e%20Balanceamento.">Alinhamento e Balanceamento</a>
+        <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Freios.">Freios</a>
+        <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Suspensão.">Suspensão</a>
+        <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Injeção%20Eletrônica.">Injeção Eletrônica</a>
+        <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Revisão%20Completa.">Revisão Completa</a>
+    </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+    <h2>Contato</h2>
+    <p><strong>Telefone:</strong> (44) 99708-7954</p>
+    <p><strong>Email:</strong> mecanicaautomotiva.gaucha@gmail.com</p>
+</section>
+
+<!-- FOOTER -->
+<footer>© 2026 Stage Gaúcha Automotiva - Todos os direitos reservados.</footer>
+
+<!-- WHATSAPP FIXO -->
+<a class="whatsapp" href="https://wa.me/5544997087954">☎</a>
+```
+
+</body>
+</html>
