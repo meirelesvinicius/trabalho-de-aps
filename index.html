@@ -43,12 +43,14 @@ header{
 .logo{
     font-size:28px;
     font-weight:700;
+    color:white;
 }
 
 nav a{
     color:white;
     text-decoration:none;
     margin-left:30px;
+    font-weight:500;
     transition:0.3s;
 }
 
@@ -76,6 +78,7 @@ nav a:hover{
 
 .hero h1{
     font-size:64px;
+    font-weight:700;
     line-height:1.1;
     margin-bottom:25px;
 }
@@ -141,6 +144,7 @@ section p{
     color:#ccc;
     line-height:1.8;
     font-size:18px;
+    max-width:800px;
 }
 
 /* SERVIÇOS */
@@ -158,9 +162,9 @@ section p{
     border-radius:10px;
     text-decoration:none;
     color:white;
-    text-align:center;
     font-size:20px;
     font-weight:700;
+    text-align:center;
     transition:0.3s;
     border:2px solid transparent;
 }
@@ -196,6 +200,7 @@ footer{
     color:white;
     font-size:30px;
     text-decoration:none;
+    box-shadow:0 0 15px rgba(0,0,0,0.4);
 }
 
 /* MODAL 3D */
@@ -206,11 +211,11 @@ footer{
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.9);
+    background:rgba(0,0,0,0.92);
     display:none;
     justify-content:center;
     align-items:center;
-    z-index:9999;
+    z-index:99999;
 }
 
 .modal-content{
@@ -221,17 +226,21 @@ footer{
     border-radius:12px;
 }
 
+.modal-content h2{
+    margin-bottom:30px;
+}
+
 .fechar{
     float:right;
-    font-size:32px;
+    font-size:35px;
     cursor:pointer;
+    color:white;
 }
 
 .marcas{
     display:flex;
     flex-wrap:wrap;
     gap:15px;
-    margin-top:20px;
 }
 
 .marcas button{
@@ -283,7 +292,7 @@ footer{
     height:100%;
     background:black;
     display:none;
-    z-index:10000;
+    z-index:100000;
 }
 
 .viewer3d iframe{
@@ -295,9 +304,10 @@ footer{
     position:absolute;
     top:20px;
     right:30px;
-    font-size:40px;
+    color:white;
+    font-size:45px;
     cursor:pointer;
-    z-index:10001;
+    z-index:100001;
 }
 
 /* RESPONSIVO */
@@ -338,6 +348,8 @@ footer{
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
 ```
@@ -347,7 +359,7 @@ footer{
 
 <nav>
     <a href="#home">Home</a>
-    <a href="#empresa">Empresa</a>
+    <a href="#empresa">A Empresa</a>
     <a href="#servicos">Serviços</a>
     <a href="#contato">Contato</a>
 </nav>
@@ -367,13 +379,15 @@ footer{
     </h1>
 
     <p>
-        Atuamos com uma ampla variedade de serviços automotivos.
+        Atuamos com uma ampla variedade de serviços automotivos,
+        oferecendo qualidade, confiança e tecnologia para cuidar
+        do seu veículo com excelência.
     </p>
 
     <div class="buttons">
 
         <a href="https://wa.me/5544997087954" class="btn">
-            WhatsApp
+            (44) 99708-7954
         </a>
 
         <a class="btn-3d" onclick="abrirModal()">
@@ -395,7 +409,9 @@ footer{
 <h2>A Empresa</h2>
 
 <p>
-    Especializada em manutenção automotiva premium.
+    A Stage Gaúcha Automotiva é especializada em manutenção automotiva completa,
+    oferecendo serviços de alta qualidade com profissionais capacitados
+    e equipamentos modernos.
 </p>
 ```
 
@@ -406,14 +422,33 @@ footer{
 <section id="servicos">
 
 ```
-<h2>Serviços</h2>
+<h2>Escolha um Serviço</h2>
 
 <div class="servicos-grid">
 
-    <a class="servico-card">Troca de Óleo</a>
-    <a class="servico-card">Freios</a>
-    <a class="servico-card">Suspensão</a>
-    <a class="servico-card">Revisão</a>
+    <a class="servico-card" href="#">
+        Troca de Óleo
+    </a>
+
+    <a class="servico-card" href="#">
+        Alinhamento e Balanceamento
+    </a>
+
+    <a class="servico-card" href="#">
+        Freios
+    </a>
+
+    <a class="servico-card" href="#">
+        Suspensão
+    </a>
+
+    <a class="servico-card" href="#">
+        Injeção Eletrônica
+    </a>
+
+    <a class="servico-card" href="#">
+        Revisão Completa
+    </a>
 
 </div>
 ```
@@ -427,24 +462,30 @@ footer{
 ```
 <h2>Contato</h2>
 
-<p>(44) 99708-7954</p>
+<p><strong>Telefone:</strong> (44) 99708-7954</p>
+
+<p><strong>Email:</strong> mecanicaautomotiva.gaucha@gmail.com</p>
 ```
 
 </section>
 
+<!-- FOOTER -->
+
 <footer>
 
 ```
-© 2026 Stage Gaúcha Automotiva
+© 2026 Stage Gaúcha Automotiva - Todos os direitos reservados.
 ```
 
 </footer>
+
+<!-- WHATSAPP -->
 
 <a class="whatsapp" href="https://wa.me/5544997087954">
 ☎
 </a>
 
-<!-- MODAL -->
+<!-- MODAL 3D -->
 
 <div class="modal3d" id="modal3d">
 
@@ -482,10 +523,14 @@ footer{
         <input
         type="text"
         id="pesquisaCarro"
-        placeholder="Digite o modelo..."
+        placeholder="Pesquisar modelo..."
         onkeyup="filtrarCarros()">
 
-        <div class="lista-carros" id="listaCarros"></div>
+        <div
+        class="lista-carros"
+        id="listaCarros">
+
+        </div>
 
     </div>
 
@@ -494,7 +539,7 @@ footer{
 
 </div>
 
-<!-- VIEWER 3D -->
+<!-- VIEWER -->
 
 <div class="viewer3d" id="viewer3d">
 
@@ -509,9 +554,9 @@ onclick="fecharViewer()">
 
 <iframe
 id="iframe3d"
-src=""
 frameborder="0"
-allowfullscreen>
+allowfullscreen
+allow="autoplay; fullscreen; xr-spatial-tracking">
 
 </iframe>
 ```
@@ -525,28 +570,28 @@ const carros = {
     BMW: [
         {
             nome: "BMW M4",
-            link: "https://www.youtube.com/embed/rnRbHJ1BQXA"
+            link: "https://sketchfab.com/models/3f54b1c6e4b84f8c8f7f4b8d9b6e5a1c/embed"
         }
     ],
 
     Audi: [
         {
             nome: "Audi R8",
-            link: "https://www.youtube.com/embed/Vi-e7J8L5xY"
+            link: "https://sketchfab.com/models/8c7f0d5d4a5f4a0dbf5d1f8b3e5f2a1b/embed"
         }
     ],
 
     Mercedes: [
         {
-            nome: "Mercedes AMG",
-            link: "https://www.youtube.com/embed/q6fQ4z1xsuQ"
+            nome: "Mercedes AMG GT",
+            link: "https://sketchfab.com/models/5b6d7e8f9a1c4d2e8f7b6c5d4e3f2a1b/embed"
         }
     ],
 
     Toyota: [
         {
             nome: "Toyota Supra",
-            link: "https://www.youtube.com/embed/D9H0D8e4h2A"
+            link: "https://sketchfab.com/models/1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e/embed"
         }
     ]
 
@@ -594,7 +639,7 @@ function mostrarCarros(lista){
         class="carro-item"
         onclick="abrir3D('${carro.link}')">
 
-        ${carro.nome}
+            ${carro.nome}
 
         </div>
 
@@ -613,7 +658,7 @@ function filtrarCarros(){
 
     const filtrados =
     marcaSelecionada.filter(carro =>
-    carro.nome.toLowerCase().includes(texto)
+        carro.nome.toLowerCase().includes(texto)
     );
 
     mostrarCarros(filtrados);
