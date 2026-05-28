@@ -104,7 +104,6 @@
 
         .servico-card:hover{
             transform:translateY(-5px);
-            border-color:#6A00FF;
             background:#222;
         }
 
@@ -132,7 +131,7 @@
             text-decoration:none;
         }
 
-        /* MODAL ORÇAMENTO */
+        /* MODAL */
         .modal{
             position:fixed;
             top:0;
@@ -197,11 +196,9 @@
 <section class="hero" id="home">
     <div class="hero-content">
         <h1>NÓS FORNECEMOS MAIS DE 300 TIPOS DE SERVIÇOS</h1>
-        <p>Atuamos com uma ampla variedade de serviços automotivos.</p>
+        <p>Atuamos com qualidade, tecnologia e confiança para seu veículo.</p>
 
         <a href="https://wa.me/5544997087954" class="btn">WhatsApp</a>
-
-        <!-- BOTÃO ORÇAMENTO -->
         <a class="btn" onclick="abrirOrcamento()">Orçamento Inteligente</a>
     </div>
 </section>
@@ -212,17 +209,36 @@
     <p>A Stage Gaúcha Automotiva é especializada em manutenção automotiva completa.</p>
 </section>
 
-<!-- SERVIÇOS -->
+<!-- SERVIÇOS (AGORA FUNCIONANDO COMO NO ORIGINAL) -->
 <section id="servicos">
     <h2>Escolha um Serviço</h2>
 
     <div class="servicos-grid">
-        <a class="servico-card">Troca de Óleo</a>
-        <a class="servico-card">Alinhamento</a>
-        <a class="servico-card">Freios</a>
-        <a class="servico-card">Suspensão</a>
-        <a class="servico-card">Injeção Eletrônica</a>
-        <a class="servico-card">Revisão Completa</a>
+
+        <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20Troca%20de%20Óleo.">
+            Troca de Óleo
+        </a>
+
+        <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20Alinhamento%20e%20Balanceamento.">
+            Alinhamento e Balanceamento
+        </a>
+
+        <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20Freios.">
+            Freios
+        </a>
+
+        <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20Suspensão.">
+            Suspensão
+        </a>
+
+        <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20Injeção%20Eletrônica.">
+            Injeção Eletrônica
+        </a>
+
+        <a class="servico-card" href="https://wa.me/5544997087954?text=Olá,%20gostaria%20de%20agendar%20Revisão%20Completa.">
+            Revisão Completa
+        </a>
+
     </div>
 </section>
 
@@ -235,52 +251,52 @@
 
 <!-- FOOTER -->
 <footer>
-    © 2026 Stage Gaúcha Automotiva - Todos os direitos reservados.
+    © 2026 Stage Gaúcha Automotiva
 </footer>
 
 <!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/5544997087954">☎</a>
 
-<!-- MODAL ORÇAMENTO -->
+<!-- ORÇAMENTO -->
 <div class="modal" id="modal">
 
-    <div class="modal-content">
+<div class="modal-content">
 
-        <span class="fechar" onclick="fecharOrcamento()">×</span>
+<span class="fechar" onclick="fecharOrcamento()">×</span>
 
-        <h2>Orçamento Inteligente</h2>
+<h2>Orçamento Inteligente</h2>
 
-        <select id="carro">
-            <option value="1">Carro Popular</option>
-            <option value="2">Sedan</option>
-            <option value="3">SUV</option>
-            <option value="4">Esportivo</option>
-        </select>
+<select id="carro">
+    <option value="1">Popular</option>
+    <option value="2">Sedan</option>
+    <option value="3">SUV</option>
+    <option value="4">Esportivo</option>
+</select>
 
-        <select id="servico">
-            <option value="1">Troca de Óleo</option>
-            <option value="1.5">Freios</option>
-            <option value="2">Suspensão</option>
-            <option value="2.5">Revisão Completa</option>
-            <option value="3">Injeção Eletrônica</option>
-        </select>
+<select id="servico">
+    <option value="1">Troca de Óleo</option>
+    <option value="1.5">Freios</option>
+    <option value="2">Suspensão</option>
+    <option value="2.5">Revisão</option>
+    <option value="3">Injeção</option>
+</select>
 
-        <button class="btn" onclick="calcular()">Calcular</button>
+<button class="btn" onclick="calcular()">Calcular</button>
 
-        <h3 id="resultado" style="margin-top:20px;"></h3>
+<h3 id="resultado" style="margin-top:20px;"></h3>
 
-    </div>
+</div>
 
 </div>
 
 <script>
 
 function abrirOrcamento(){
-    document.getElementById("modal").style.display="flex";
+document.getElementById("modal").style.display="flex";
 }
 
 function fecharOrcamento(){
-    document.getElementById("modal").style.display="none";
+document.getElementById("modal").style.display="none";
 }
 
 function calcular(){
