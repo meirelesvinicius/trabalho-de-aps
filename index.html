@@ -34,6 +34,7 @@
             text-decoration:none;
             font-weight:500;
             transition:0.3s;
+            cursor:pointer;
         }
 
         nav a:hover{color:#7B3FFF;}
@@ -243,12 +244,17 @@
             margin-bottom:20px;
         }
 
-        .item-add-info img{
+        .item-add-info .img-item-add{
             width:120px;
             height:120px;
             object-fit:cover;
             border-radius:10px;
             margin-bottom:15px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:60px;
+            background:#222;
         }
 
         .item-add-info h3{font-size:20px;margin-bottom:5px;}
@@ -342,7 +348,7 @@
 
         .checkout-btns .btn{flex:1;}
 
-        /* CHECKBOX CATEGORIAS */
+        /* CATEGORIAS */
         .categorias{
             display:flex;
             gap:15px;
@@ -364,6 +370,41 @@
             border-color:#6A00FF;
             background:#222;
         }
+
+        /* INFO CONTATO */
+        .contato-info{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+            margin-top:40px;
+        }
+
+        .contato-card{
+            background:#1a1a1a;
+            padding:35px;
+            border-radius:10px;
+            text-align:center;
+        }
+
+        .contato-card h3{
+            font-size:22px;
+            margin-bottom:15px;
+            color:#6A00FF;
+        }
+
+        .contato-card p{
+            font-size:16px;
+            color:#ccc;
+            line-height:1.6;
+        }
+
+        .contato-card a{
+            color:#ccc;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        .contato-card a:hover{color:#6A00FF;}
 
         /* FOOTER */
         footer{
@@ -421,8 +462,8 @@
         <a href="#home">Home</a>
         <a href="#empresa">Empresa</a>
         <a href="#servicos">Serviços</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#contato">Contato</a>
+        <a onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">Loja</a>
+        <a onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Contato</a>
         <button class="carrinho-btn" onclick="abrirCarrinho()">
             🛒
             <span class="carrinho-badge" id="carrinho-badge">0</span>
@@ -480,7 +521,7 @@
     </div>
 </section>
 
-<!-- PRODUTOS -->
+<!-- PRODUTOS / LOJA -->
 <section id="produtos">
     <h2>Loja de Produtos</h2>
     <p class="section-subtitle">Compre online e retire na oficina ou receba em casa</p>
@@ -502,47 +543,16 @@
 
 <!-- CONTATO -->
 <section id="contato">
-    <h2>Contato</h2>
-    <p><strong>Telefone:</strong> (44) 99708-7954</p>
-    <p><strong>Email:</strong> mecanicaautomotiva.gaucha@gmail.com</p>
-</section>
+    <h2>Fale Conosco</h2>
+    <p>Estamos prontos para atender você</p>
 
-<!-- FOOTER -->
-<footer>
-    © 2026 Stage Gaúcha Automotiva
-</footer>
+    <div class="contato-info">
+        <div class="contato-card">
+            <h3>📱 WhatsApp</h3>
+            <p>(44) 99708-7954</p>
+            <a href="https://wa.me/5544997087954" class="btn btn-small" style="margin-top:15px;">Enviar Mensagem</a>
+        </div>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/5544997087954">💬</a>
-
-<!-- MODAL ORÇAMENTO -->
-<div class="modal" id="modal-orcamento">
-    <div class="modal-content">
-        <span class="fechar" onclick="fecharOrcamento()">×</span>
-        <h2>Orçamento Inteligente</h2>
-        
-        <select id="carro">
-            <option value="1">Popular</option>
-            <option value="2">Sedan</option>
-            <option value="3">SUV</option>
-            <option value="4">Esportivo</option>
-        </select>
-
-        <select id="servico">
-            <option value="1">Troca de Óleo</option>
-            <option value="1.5">Freios</option>
-            <option value="2">Suspensão</option>
-            <option value="2.5">Revisão</option>
-            <option value="3">Injeção</option>
-        </select>
-
-        <button class="btn" onclick="calcular()">Calcular</button>
-
-        <h3 id="resultado" style="margin-top:20px;"></h3>
-    </div>
-</div>
-
-<!-- MODAL ADICIONAR ITEM -->
-<div class="modal" id="modal-add">
-    <div class="modal-content">
-        <
+        <div class="contato-card">
+            <h3>📧 Email</h3>
+            <p>mecanicaautomotiva.gaucha
