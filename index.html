@@ -29,15 +29,19 @@
 
         nav{display:flex;align-items:center;gap:20px;}
         
-        nav a{
+        nav a, nav button.nav-link{
             color:white;
             text-decoration:none;
             font-weight:500;
             transition:0.3s;
             cursor:pointer;
+            background:none;
+            border:none;
+            font-size:16px;
+            font-family:'Montserrat', sans-serif;
         }
 
-        nav a:hover{color:#7B3FFF;}
+        nav a:hover, nav button.nav-link:hover{color:#7B3FFF;}
 
         /* CARRINHO */
         .carrinho-btn{
@@ -255,6 +259,7 @@
             justify-content:center;
             font-size:60px;
             background:#222;
+            margin:0 auto 15px;
         }
 
         .item-add-info h3{font-size:20px;margin-bottom:5px;}
@@ -462,8 +467,8 @@
         <a href="#home">Home</a>
         <a href="#empresa">Empresa</a>
         <a href="#servicos">Serviços</a>
-        <a onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">Loja</a>
-        <a onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Contato</a>
+        <a href="#produtos">Loja</a>
+        <a href="#contato">Contato</a>
         <button class="carrinho-btn" onclick="abrirCarrinho()">
             🛒
             <span class="carrinho-badge" id="carrinho-badge">0</span>
@@ -533,7 +538,6 @@
         <button class="categoria-btn" onclick="filtrarProdutos('bateria', this)">Baterias</button>
         <button class="categoria-btn" onclick="filtrarProdutos('freio', this)">Freios</button>
         <button class="categoria-btn" onclick="filtrarProdutos('filtros', this)">Filtros</button>
-        <button class="categoria-btn" onclick="filtrarProdutos('suspensao', this)">Suspensão</button>
     </div>
 
     <div class="produtos-grid" id="produtos-grid">
@@ -555,4 +559,10 @@
 
         <div class="contato-card">
             <h3>📧 Email</h3>
-            <p>mecanicaautomotiva.gaucha
+            <p>mecanicaautomotiva.gaucha@gmail.com</p>
+            <a href="mailto:mecanicaautomotiva.gaucha@gmail.com" class="btn btn-small" style="margin-top:15px;">Enviar Email</a>
+        </div>
+
+        <div class="contato-card">
+            <h3>📍 Endereço</h3>
+            <p>Maringá, Paraná</p
