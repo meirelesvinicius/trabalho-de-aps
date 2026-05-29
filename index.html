@@ -22,19 +22,48 @@
             padding:25px 60px;
             background:rgba(0,0,0,0.6);
             z-index:1000;
+            backdrop-filter:blur(10px);
         }
 
         .logo{font-size:28px;font-weight:700;color:white;}
 
-        nav a{
+        nav a, nav button{
             color:white;
             text-decoration:none;
             margin-left:30px;
             font-weight:500;
             transition:0.3s;
+            background:none;
+            border:none;
+            cursor:pointer;
+            font-size:16px;
         }
 
-        nav a:hover{color:#7B3FFF;}
+        nav a:hover, nav button:hover{color:#7B3FFF;}
+
+        /* CARRINHO ICON */
+        .carrinho-btn{
+            position:relative;
+            cursor:pointer;
+            font-size:24px;
+            margin-left:30px;
+        }
+
+        .carrinho-badge{
+            position:absolute;
+            top:-8px;
+            right:-8px;
+            background:#ff4757;
+            color:white;
+            font-size:12px;
+            width:20px;
+            height:20px;
+            border-radius:50%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-weight:700;
+        }
 
         /* HERO */
         .hero{
@@ -73,17 +102,23 @@
             border-radius:6px;
             transition:0.3s;
             cursor:pointer;
+            border:none;
+            font-size:16px;
         }
 
         .btn:hover{background:#4b00b5;}
+        .btn-small{padding:10px 20px;font-size:14px;}
+        .btn-danger{background:#ff4757;}
+        .btn-danger:hover{background:#e84118;}
 
         /* SEÇÕES */
         section{padding:100px 70px;}
         section h2{font-size:42px;margin-bottom:25px;}
         section p{color:#ccc;line-height:1.8;font-size:18px;max-width:800px;}
+        .section-subtitle{color:#888;margin-bottom:40px;font-size:16px;}
 
         /* SERVIÇOS */
-        .servicos-grid{
+        .servicos-grid, .produtos-grid{
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
             gap:25px;
@@ -107,6 +142,164 @@
             background:#222;
         }
 
+        /* PRODUTOS */
+        .produto-card{
+            background:#1a1a1a;
+            border-radius:10px;
+            overflow:hidden;
+            transition:0.3s;
+        }
+
+        .produto-card:hover{
+            transform:translateY(-5px);
+            box-shadow:0 10px 30px rgba(106,0,255,0.2);
+        }
+
+        .produto-img{
+            width:100%;
+            height:180px;
+            object-fit:cover;
+            background:#222;
+        }
+
+        .produto-info{
+            padding:25px;
+        }
+
+        .produto-info h3{
+            font-size:18px;
+            margin-bottom:10px;
+        }
+
+        .produto-info .marca{
+            color:#888;
+            font-size:14px;
+            margin-bottom:10px;
+        }
+
+        .produto-info .preco{
+            font-size:24px;
+            font-weight:700;
+            color:#6A00FF;
+            margin-bottom:15px;
+        }
+
+        .produto-info .btn-add{
+            width:100%;
+        }
+
+        /* CATEGORIAS */
+        .categorias{
+            display:flex;
+            gap:15px;
+            flex-wrap:wrap;
+            margin-bottom:30px;
+        }
+
+        .categoria-btn{
+            padding:10px 25px;
+            background:#1a1a1a;
+            border:2px solid transparent;
+            border-radius:25px;
+            color:white;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .categoria-btn.active, .categoria-btn:hover{
+            border-color:#6A00FF;
+            background:#222;
+        }
+
+        /* MODAL CARRINHO */
+        .modal{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.9);
+            display:none;
+            justify-content:center;
+            align-items:center;
+            z-index:99999;
+        }
+
+        .modal-content{
+            background:#1a1a1a;
+            padding:40px;
+            width:90%;
+            max-width:600px;
+            border-radius:10px;
+            max-height:80vh;
+            overflow-y:auto;
+        }
+
+        .fechar{
+            float:right;
+            font-size:30px;
+            cursor:pointer;
+            line-height:1;
+        }
+
+        .fechar:hover{color:#6A00FF;}
+
+        /* ITENS CARRINHO */
+        .item-carrinho{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px;
+            background:#222;
+            border-radius:8px;
+            margin-bottom:15px;
+        }
+
+        .item-carrinho img{
+            width:60px;
+            height:60px;
+            object-fit:cover;
+            border-radius:5px;
+        }
+
+        .item-info{
+            flex:1;
+            margin:0 15px;
+        }
+
+        .item-info h4{font-size:16px;margin-bottom:5px;}
+        .item-info .preco{color:#6A00FF;font-weight:700;}
+
+        .item-remove{
+            background:none;
+            border:none;
+            color:#ff4757;
+            cursor:pointer;
+            font-size:20px;
+        }
+
+        /* TOTAL */
+        .total-carrinho{
+            text-align:right;
+            padding:20px 0;
+            border-top:1px solid #333;
+            margin-top:20px;
+        }
+
+        .total-carrinho h3{
+            font-size:28px;
+            color:#6A00FF;
+        }
+
+        /* CHECKOUT */
+        .checkout-buttons{
+            display:flex;
+            gap:15px;
+            margin-top:20px;
+        }
+
+        .checkout-buttons .btn{flex:1;}
+
         /* FOOTER */
         footer{
             background:black;
@@ -129,36 +322,10 @@
             align-items:center;
             font-size:30px;
             text-decoration:none;
+            z-index:999;
         }
 
-        /* MODAL */
-        .modal{
-            position:fixed;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            background:rgba(0,0,0,0.9);
-            display:none;
-            justify-content:center;
-            align-items:center;
-            z-index:99999;
-        }
-
-        .modal-content{
-            background:#1a1a1a;
-            padding:40px;
-            width:90%;
-            max-width:500px;
-            border-radius:10px;
-        }
-
-        .fechar{
-            float:right;
-            font-size:30px;
-            cursor:pointer;
-        }
-
+        /* SELECTS */
         select{
             width:100%;
             padding:12px;
@@ -166,15 +333,18 @@
             background:#111;
             color:white;
             border:none;
+            border-radius:5px;
         }
 
+        /* RESPONSIVO */
         @media(max-width:768px){
             header{padding:20px;flex-direction:column;}
-            nav{margin-top:15px;}
-            nav a{margin:0 10px;font-size:14px;}
+            nav{margin-top:15px;display:flex;flex-wrap:wrap;justify-content:center;}
+            nav a, nav button{margin:5px 10px;font-size:14px;}
             .hero{padding:0 25px;}
             .hero h1{font-size:42px;}
             section{padding:70px 25px;}
+            .produtos-grid, .servicos-grid{grid-template-columns:1fr 1fr;}
         }
     </style>
 </head>
@@ -186,9 +356,14 @@
     <div class="logo">Stage Gaúcha Automotiva</div>
     <nav>
         <a href="#home">Home</a>
-        <a href="#empresa">A Empresa</a>
+        <a href="#empresa">Empresa</a>
         <a href="#servicos">Serviços</a>
+        <a href="#produtos">Produtos</a>
         <a href="#contato">Contato</a>
+        <div class="carrinho-btn" onclick="abrirCarrinho()">
+            🛒
+            <span class="carrinho-badge" id="carrinho-badge">0</span>
+        </div>
     </nav>
 </header>
 
@@ -206,10 +381,10 @@
 <!-- EMPRESA -->
 <section id="empresa">
     <h2>A Empresa</h2>
-    <p>A Stage Gaúcha Automotiva é especializada em manutenção automotiva completa.</p>
+    <p>A Stage Gaúcha Automotiva é especializada em manutenção automotiva completa, oferecendo serviços de qualidade e confiança para seu veículo.</p>
 </section>
 
-<!-- SERVIÇOS (AGORA FUNCIONANDO COMO NO ORIGINAL) -->
+<!-- SERVIÇOS -->
 <section id="servicos">
     <h2>Escolha um Serviço</h2>
 
@@ -242,6 +417,26 @@
     </div>
 </section>
 
+<!-- PRODUTOS -->
+<section id="produtos">
+    <h2>Loja de Produtos</h2>
+    <p class="section-subtitle">Compre online e retire na oficina ou receba em casa</p>
+
+    <div class="categorias">
+        <button class="categoria-btn active" onclick="filtrarProdutos('todos', this)">Todos</button>
+        <button class="categoria-btn" onclick="filtrarProdutos('oleo', this)">Óleos</button>
+        <button class="categoria-btn" onclick="filtrarProdutos('pneus', this)">Pneus</button>
+        <button class="categoria-btn" onclick="filtrarProdutos('bateria', this)">Baterias</button>
+        <button class="categoria-btn" onclick="filtrarProdutos('freio', this)">Freios</button>
+        <button class="categoria-btn" onclick="filtrarProdutos('filtros', this)">Filtros</button>
+        <button class="categoria-btn" onclick="filtrarProdutos('suspensao', this)">Suspensão</button>
+    </div>
+
+    <div class="produtos-grid" id="produtos-grid">
+        <!-- Produtos serão inseridos via JavaScript -->
+    </div>
+</section>
+
 <!-- CONTATO -->
 <section id="contato">
     <h2>Contato</h2>
@@ -254,65 +449,64 @@
     © 2026 Stage Gaúcha Automotiva
 </footer>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/5544997087954">☎</a>
+<!-- WHATSAPP FLUTUANTE -->
+<a class="whatsapp" href="https://wa.me/5544997087954">💬</a>
 
-<!-- ORÇAMENTO -->
-<div class="modal" id="modal">
+<!-- MODAL ORÇAMENTO -->
+<div class="modal" id="modal-orcamento">
+    <div class="modal-content">
+        <span class="fechar" onclick="fecharOrcamento()">×</span>
+        <h2>Orçamento Inteligente</h2>
+        
+        <select id="carro">
+            <option value="1">Popular</option>
+            <option value="2">Sedan</option>
+            <option value="3">SUV</option>
+            <option value="4">Esportivo</option>
+        </select>
 
-<div class="modal-content">
+        <select id="servico">
+            <option value="1">Troca de Óleo</option>
+            <option value="1.5">Freios</option>
+            <option value="2">Suspensão</option>
+            <option value="2.5">Revisão</option>
+            <option value="3">Injeção</option>
+        </select>
 
-<span class="fechar" onclick="fecharOrcamento()">×</span>
+        <button class="btn" onclick="calcular()">Calcular</button>
 
-<h2>Orçamento Inteligente</h2>
-
-<select id="carro">
-    <option value="1">Popular</option>
-    <option value="2">Sedan</option>
-    <option value="3">SUV</option>
-    <option value="4">Esportivo</option>
-</select>
-
-<select id="servico">
-    <option value="1">Troca de Óleo</option>
-    <option value="1.5">Freios</option>
-    <option value="2">Suspensão</option>
-    <option value="2.5">Revisão</option>
-    <option value="3">Injeção</option>
-</select>
-
-<button class="btn" onclick="calcular()">Calcular</button>
-
-<h3 id="resultado" style="margin-top:20px;"></h3>
-
+        <h3 id="resultado" style="margin-top:20px;"></h3>
+    </div>
 </div>
 
+<!-- MODAL CARRINHO -->
+<div class="modal" id="modal-carrinho">
+    <div class="modal-content">
+        <span class="fechar" onclick="fecharCarrinho()">×</span>
+        <h2>Seu Carrinho</h2>
+        
+        <div id="itens-carrinho">
+            <!-- Itens serão inseridos via JavaScript -->
+        </div>
+
+        <div class="total-carrinho">
+            <h3>Total: R$ <span id="total-carrinho">0,00</span></h3>
+        </div>
+
+        <div class="checkout-buttons">
+            <button class="btn btn-danger" onclick="limparCarrinho()">Limpar</button>
+            <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
+    </div>
 </div>
 
 <script>
-
-function abrirOrcamento(){
-document.getElementById("modal").style.display="flex";
-}
-
-function fecharOrcamento(){
-document.getElementById("modal").style.display="none";
-}
-
-function calcular(){
-
-let carro = document.getElementById("carro").value;
-let servico = document.getElementById("servico").value;
-
-let base = 100 * carro;
-let total = base * servico;
-
-document.getElementById("resultado").innerHTML =
-"Valor estimado: R$ " + total.toFixed(2);
-
-}
-
-</script>
-
-</body>
-</html>
+    // BANCO DE DADOS DE PRODUTOS
+    const produtos = [
+        {
+            id: 1,
+            nome: "Óleo Lubrificante Synth 5W30",
+            marca: "Shell Helix",
+            categoria: "oleo",
+            preco: 89.90,
+            imagem: "https://images.unsplash.com/photo-150
